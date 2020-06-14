@@ -1,9 +1,15 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import Postcard from './Postcard'
 
-const PostsPage = () => {
+
+const PostsPage = (props) => {
+
+  console.log(props.posts)
+
   return (
     <div className="PostsPage">
+  
+      {props.posts.map(post => <Postcard key={post.id} {...post} />  )}
     </div>
   );
 }
