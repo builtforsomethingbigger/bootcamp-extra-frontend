@@ -5,7 +5,7 @@ function Search() {
   return (
     <div className="ui category search">
       <div className="ui icon input">
-        <input className="prompt" type="text" placeholder="Search animals..." />
+        <input className="prompt" type="text" placeholder="Search by title..." />
         <i className="search icon"></i>
       </div>
       <div className="results"></div>
