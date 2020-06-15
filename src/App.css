@@ -20,6 +20,12 @@
 .prompt{
   width: 30vw;
 }
+.marg_10{
+  margin: 10px;
+}
+.pad_20{
+  padding: 20px;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
