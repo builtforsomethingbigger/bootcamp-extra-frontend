@@ -26,7 +26,8 @@ class App extends React.Component {
 
   addNewPost = (newPost) => {
     this.setState({
-      posts: [...this.state.posts, newPost]
+      posts: [...this.state.posts, newPost],
+      showForm: !this.state.showForm
     })
   }
 
