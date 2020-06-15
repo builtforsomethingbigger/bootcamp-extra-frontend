@@ -8,7 +8,7 @@ function HomePosts(props) {
   return (
     <div className="PostsPage">
   
-        {props.posts.map(post => 
+        {props.posts.sort((a,b) => b.likes - a.likes).map(post => 
             <div className="ui marg_10 floatCard">
                 <div className="ui left aligned table pad_20">
                     <div className="content">
