@@ -4,7 +4,7 @@ import React from 'react';
 function Postcard(props) {
   // console.log(props)
   const { title, description, likes, url_link } = props
-  console.log(props)
+  // console.log(props)
   return (
     // <div className="ui items">
     //   <div className="item">

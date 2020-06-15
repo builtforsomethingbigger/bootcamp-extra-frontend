@@ -4,7 +4,7 @@ import Postcard from './Postcard'
 
 const PostsPage = (props) => {
 
-  console.log(props.posts)
+  // console.log(props.posts)
 
   return (
     <div className="PostsPage">
