@@ -27,7 +27,7 @@ function Postcard(props) {
 
     // </div>
 
-    <div className="ui container marg_10">
+    <div className="ui marg_10">
       <div className="ui left aligned table pad_20">
         <div className="content">
           <h1 className="header">{title}</h1>
