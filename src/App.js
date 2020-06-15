@@ -1,8 +1,6 @@
 import React from 'react';
-// import logo from './logo.svg';
 import './App.css';
 import { Home, PostsPage } from './components';
-
 import { Route, Switch } from 'react-router-dom';
 import Nav from './components/Nav'
 
@@ -56,12 +54,10 @@ class App extends React.Component {
 
   displayRecentPosts = e => {
     const allPosts = [...this.state.posts]
-    const input = this.state.searchInput
     return allPosts.sort((a, b) => b.date - a.date)
   }
 
   render() {
-    console.log(this.state)
     return (
       <div className="App">
         <Nav value={this.state.searchInput} onChange={this.searchPosts} />
@@ -69,7 +65,6 @@ class App extends React.Component {
           <Route path='/posts' render={() => <PostsPage posts={this.state.posts}/>} />
           <Route path="/" render={() => <Home displayRecentPosts={this.displayRecentPosts()} displaySearchedPosts={this.displaySearchedPosts()} />} />
         </Switch>
-        {/* <Home displayRecentPosts={this.displayRecentPosts()} displaySearchedPosts={this.displaySearchedPosts()} /> */}
       </div>
     )
   }

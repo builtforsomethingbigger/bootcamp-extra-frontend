@@ -1,10 +1,6 @@
 import React from 'react';
 
-
 function HomePosts(props) {
-    // console.log(props)
-    const { title, author, likes } = props
-    console.log(props)
     return (
         <div className="PostsPage pad_10">
 
@@ -13,15 +9,17 @@ function HomePosts(props) {
                     <div className="ui left aligned table pad_20">
                         <div className="content">
                             <table>
-                                <tr>
-                                    <td><h1 className="header">{post.title}</h1></td>
-                                </tr>
-                                <tr>
-                                    <td className="description"><b>Author:</b> {post.author}</td>
-                                </tr>
-                                <tr>
-                                    <td className="extra"><b>likes:</b> {post.likes}</td>
-                                </tr>
+                                <tbody>
+                                    <tr>
+                                        <td><h1 className="header">{post.title}</h1></td>
+                                    </tr>
+                                    <tr>
+                                        <td className="description"><b>Author:</b> {post.author}</td>
+                                    </tr>
+                                    <tr>
+                                        <td className="extra"><b>likes:</b> {post.likes}</td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
                     </div>

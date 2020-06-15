@@ -27,19 +27,21 @@ export default class Nav extends React.Component{
             <div id="navigation full">
                 <div className="ui menu">
                     <table className="full" border="0" cellPadding="0" cellSpacing="0">
-                        <tr>
-                            <td width="100px" className="browseBtn"><Link id="browseCta" onClick={this.clickHandler} className="browse item">
-                                    Browse
-                                    <i className="dropdown icon"></i>
-                                </Link>
-                            </td>
-                            <td className="searchBar">
-                                <Search value={this.props.value} onChange={this.props.onChange} />
-                            </td>
-                            <td align="left" width="50px">
-                                <img src={'../images/bc_extra_logo.png'} alt="Bootcamp Extra" />
-                            </td>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <td width="100px" className="browseBtn"><Link id="browseCta" onClick={this.clickHandler} className="browse item">
+                                        Browse
+                                        <i className="dropdown icon"></i>
+                                    </Link>
+                                </td>
+                                <td className="searchBar">
+                                    <Search value={this.props.value} onChange={this.props.onChange} />
+                                </td>
+                                <td align="left" width="50px">
+                                    <img src={'../images/bc_extra_logo.png'} alt="Bootcamp Extra" />
+                                </td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
                 <div id="dropdownMenu" className="ui fluid popup alignRight" style={{display: this.state.display ? 'block' : 'none' }}>
