@@ -7,9 +7,10 @@ function RecentPosts(props) {
   console.log(props)
   return (
     <div className="ui list marg_10">
-  
+  <div>RECENT POSTS</div>
         {props.posts.sort((a,b) => b.likes - a.likes).map(post => 
             <div>
+                
                 <div className="ui left aligned table">
                     <div>
                         <table>
@@ -24,7 +25,7 @@ function RecentPosts(props) {
                 </div>
             </div>
             
-        )}
+        ).splice(0, 5)}
     </div>
   );
 }

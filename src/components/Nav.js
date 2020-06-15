@@ -24,16 +24,6 @@ export default class Nav extends React.Component{
 
     render(){
         return(
-<<<<<<< HEAD
-            <div id="navigation">
-                <div className="ui menu grey">
-                    <img src={'../images/bc_extra_logo.png'} alt='logo'/>
-                    <Search value={this.props.value} onChange={this.props.onChange} />
-                    <Link id="browseCta" onClick={this.clickHandler} className="browse item">
-                        Browse
-                        <i className="dropdown icon"></i>
-                    </Link>
-=======
             <div id="navigation full">
                 <div className="ui menu">
                     <table className="full" border="0" cellPadding="0" cellSpacing="0">
@@ -51,7 +41,6 @@ export default class Nav extends React.Component{
                             </td>
                         </tr>
                     </table>
->>>>>>> sc_061520
                 </div>
                 <div id="dropdownMenu" className="ui fluid popup alignRight" style={{display: this.state.display ? 'block' : 'none' }}>
                     <div className="ui five column relaxed equal height divided grid">
