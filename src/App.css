@@ -9,21 +9,32 @@
   pointer-events: none;
 }
 #navigation{
-  width: 100%;
+  width: 100vw;
   border: 0px;
   margin: 0px;
 }
 body{
   background-color: #f2f6f8;
 }
-#dropdownMenu {
-  margin-top:40px;
-}
-#browseCta{
+#recentPosts{
   position: relative;
+  float: left;
   margin: 0 auto;
-  justify-content: right;
-  float: right;
+  right: 10px;
+  top: 20px;
+  width: 30vw;
+  box-shadow: 3px 3px 10px 5px #87878768;
+}
+#dropdownMenu {
+  position: absolute;
+  float: left;
+  width: 70vw;
+  margin-top:60px;
+  left: 0;
+}
+.searchBar{
+  position: relative;
+  float: left;
 }
 .prompt{
   width: 60vw;
@@ -37,6 +48,9 @@ body{
 .pad_20{
   padding: 20px;
 }
+.PostsPage{
+  width: 65vw;
+}
 .floatCard{
   position: relative;
   float: left;
@@ -44,11 +58,15 @@ body{
   
 }
 .floatCard:hover{
+
   box-shadow: 1px 1px #87878768;
 }
 .alignRight{
   float: right;
   right: 0;
+}
+.full{
+  width: 100vw;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

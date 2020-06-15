@@ -24,6 +24,7 @@ export default class Nav extends React.Component{
 
     render(){
         return(
+<<<<<<< HEAD
             <div id="navigation">
                 <div className="ui menu grey">
                     <img src={'../images/bc_extra_logo.png'} alt='logo'/>
@@ -32,6 +33,25 @@ export default class Nav extends React.Component{
                         Browse
                         <i className="dropdown icon"></i>
                     </Link>
+=======
+            <div id="navigation full">
+                <div className="ui menu">
+                    <table className="full" border="0" cellPadding="0" cellSpacing="0">
+                        <tr>
+                            <td width="100px" className="browseBtn"><Link id="browseCta" onClick={this.clickHandler} className="browse item">
+                                    Browse
+                                    <i className="dropdown icon"></i>
+                                </Link>
+                            </td>
+                            <td className="searchBar">
+                                <Search value={this.props.value} onChange={this.props.onChange} />
+                            </td>
+                            <td align="left" width="50px">
+                                <img src={'../images/bc_extra_logo.png'} alt="Bootcamp Extra" />
+                            </td>
+                        </tr>
+                    </table>
+>>>>>>> sc_061520
                 </div>
                 <div id="dropdownMenu" className="ui fluid popup alignRight" style={{display: this.state.display ? 'block' : 'none' }}>
                     <div className="ui five column relaxed equal height divided grid">

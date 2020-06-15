@@ -1,8 +1,13 @@
 import React from 'react';
 import Nav from './Nav';
 import HomePosts from './HomePosts';
+<<<<<<< HEAD
 import PostForm from './PostForm';
 // import { Route, Switch } from 'react-router-dom';
+=======
+import RecentPosts from './RecentPosts';
+import { Route, Switch } from 'react-router-dom';
+>>>>>>> sc_061520
 
 const POST_URL = 'http://localhost:3000/api/v1/posts'
 
@@ -37,6 +42,7 @@ export default class Home extends React.Component {
     // || posts.author.toLowerCase().includes(input.toLowerCase()))
   }
 
+<<<<<<< HEAD
   addNewPost = (newPost) => {
     this.setState({
       posts: [...this.state.posts, newPost],
@@ -54,12 +60,21 @@ export default class Home extends React.Component {
   
 
 
+=======
+  displayRecentPosts = e => {
+    const allPosts = [...this.state.posts]
+    const input = this.state.searchInput
+    return allPosts.sort((a,b) => b.date - a.date)
+  }
+
+>>>>>>> sc_061520
   render() {
     // console.log(this.state)
     return (
-      <div>
-        <div className="App">
+      <div className="App">
+        <div className="full">
           <Nav value={this.state.searchInput} onChange={this.searchPosts}/>
+<<<<<<< HEAD
           {
             this.state.showForm ? <PostForm addNewPost={this.addNewPost} /> : null
           }
@@ -70,6 +85,27 @@ export default class Home extends React.Component {
             <h1>List of Articles</h1>
             <HomePosts posts={this.displaySearchedPosts()}  />
           </div>
+=======
+          <table className="full" border="0" cellSpacing="0" cellPadding="0">
+            <tr>
+              <td valign='top'>
+                <HomePosts posts={this.displaySearchedPosts()} />
+              </td>
+              <td valign='top'>
+                <table  border="0" cellSpacing="0" cellPadding="0">
+                  <tr>
+                    <td id="recentPosts" valign="top">
+                      <RecentPosts  posts={this.displayRecentPosts()} />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+>>>>>>> sc_061520
         </div>
       </div>
     );
