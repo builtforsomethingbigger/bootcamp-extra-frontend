@@ -27,12 +27,12 @@ function Postcard(props) {
 
     // </div>
 
-    <div class="ui container marg_10">
-      <div class="ui left aligned table pad_20">
-        <div class="content">
-          <h1 class="header">{title}</h1>
-          <div class="description"><b>Description:</b> {description}</div>
-          <div><b>Resource Link:</b> <a class="header"> {url_link}</a></div>
+    <div className="ui container marg_10">
+      <div className="ui left aligned table pad_20">
+        <div className="content">
+          <h1 className="header">{title}</h1>
+          <div className="description"><b>Description:</b> {description}</div>
+          <div><b>Resource Link:</b> <a className="header"> {url_link}</a></div>
           <div className="extra"><b>likes:</b> {likes}</div>
         </div>
       </div>

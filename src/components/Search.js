@@ -1,21 +1,15 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-export default class Search extends React.Component {
-
-  state = {
-    input: ''
-  }
-
-  render(){
-    return (
-      <div className="ui category search container">
-        <div className="ui icon input">
-          <input className="prompt" type="text" placeholder="Search by title..." value={this.state.input} />
-          <i className="search icon"></i>
-        </div>
-        <div className="results"></div>
+const Search = (props) => {
+  return (
+    <div className="ui category search container pad_10">
+      <div className="ui icon input">
+        <input className="prompt" name="searchInput" type="text" placeholder="Search by title or description..." value={props.value} onChange={props.onChange} />
+        <i className="search icon"></i>
       </div>
-    );  
-  }
+      <div className="results"></div>
+    </div>
+  );  
 }
+export default Search;

@@ -24,16 +24,16 @@ export default class Nav extends React.Component{
 
     render(){
         return(
-            <div>
-                <div className="ui menu">
-                    <img src="../../public/favicon-32x32.png" />
-                    <Search />
+            <div id="navigation">
+                <div className="ui menu grey">
+                    <img src={'../images/bc_extra_logo.png'} />
+                    <Search value={this.props.value} onChange={this.props.onChange} />
                     <Link id="browseCta" onClick={this.clickHandler} className="browse item">
                         Browse
                         <i className="dropdown icon"></i>
                     </Link>
                 </div>
-                <div id="dropdownMenu" className="ui fluid popup" style={{display: this.state.display ? 'block' : 'none' }}>
+                <div id="dropdownMenu" className="ui fluid popup alignRight" style={{display: this.state.display ? 'block' : 'none' }}>
                     <div className="ui five column relaxed equal height divided grid">
                         <div className="column">
                             <h4 className="ui header">Ruby</h4>

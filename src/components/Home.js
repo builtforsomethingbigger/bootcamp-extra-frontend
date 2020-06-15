@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from './Nav';
-import PostsPage from './PostsPage';
+import HomePosts from './HomePosts';
 import { Route, Switch } from 'react-router-dom';
 
 const POST_URL = 'http://localhost:3000/api/v1/posts'
@@ -8,7 +8,8 @@ const POST_URL = 'http://localhost:3000/api/v1/posts'
 export default class Home extends React.Component {
   state = {
     posts: [], 
-    showForm: false
+    showForm: false,
+    searchInput: ''
   }
 
   componentDidMount() {
@@ -18,7 +19,20 @@ export default class Home extends React.Component {
           posts
         })
       })
+  }
 
+  searchPosts = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+    this.displaySearchedPosts()
+  }
+
+  displaySearchedPosts = e => {
+    const allPosts = [...this.state.posts]
+    const input = this.state.searchInput
+    return allPosts.filter(posts => posts.title.toLowerCase().includes(input.toLowerCase()) 
+    || posts.description.toLowerCase().includes(input.toLowerCase()))
   }
 
   render() {
@@ -26,11 +40,11 @@ export default class Home extends React.Component {
     return (
       <div>
         <div className="App">
-          <Nav />
+          <Nav value={this.state.searchInput} onChange={this.searchPosts}/>
           <div className='post-container'>
             <h1>List of Articles</h1>
             <button>Create a Post </button>
-            <PostsPage posts={this.state.posts} />
+            <HomePosts posts={this.displaySearchedPosts()}  />
           </div>
         </div>
       </div>
