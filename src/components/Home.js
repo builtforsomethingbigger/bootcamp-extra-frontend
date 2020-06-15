@@ -33,6 +33,7 @@ export default class Home extends React.Component {
     const input = this.state.searchInput
     return allPosts.filter(posts => posts.title.toLowerCase().includes(input.toLowerCase()) 
     || posts.description.toLowerCase().includes(input.toLowerCase()))
+    // || posts.author.toLowerCase().includes(input.toLowerCase()))
   }
 
   render() {

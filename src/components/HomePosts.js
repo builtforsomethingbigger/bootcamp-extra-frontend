@@ -6,7 +6,7 @@ function HomePosts(props) {
   const { title, author, likes } = props
   console.log(props)
   return (
-    <div className="PostsPage">
+    <div className="PostsPage pad_10">
   
         {props.posts.sort((a,b) => b.likes - a.likes).map(post => 
             <div className="ui marg_10 floatCard">
