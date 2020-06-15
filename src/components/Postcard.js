@@ -4,7 +4,7 @@ import React from 'react';
 function Postcard(props) {
   // console.log(props)
   const { title, description, likes, url_link } = props
-  console.log(props)
+  // console.log(props)
   return (
     // <div className="ui items">
     //   <div className="item">
@@ -27,7 +27,7 @@ function Postcard(props) {
 
     // </div>
 
-    <div className="ui container marg_10">
+    <div className="ui marg_10">
       <div className="ui left aligned table pad_20">
         <div className="content">
           <h1 className="header">{title}</h1>

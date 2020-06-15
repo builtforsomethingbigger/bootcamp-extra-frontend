@@ -2,16 +2,19 @@ import React from 'react';
 import Postcard from './Postcard'
 
 
-const PostsPage = (props) => {
+class PostsPage extends React.Component {
 
-  console.log(props.posts)
+  // console.log(props.posts)
 
-  return (
-    <div className="PostsPage">
-  
-      {props.posts.map(post => <Postcard key={post.id} {...post} />  )}
-    </div>
-  );
+  render(){
+    return (
+      <div className="PostsPage">
+    
+        {this.props.posts.map(post => <Postcard key={post.id} {...post} />  )}
+      </div>
+    );
+  }
 }
+
 
 export default PostsPage;
