@@ -8,7 +8,7 @@ export default class Home extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App pad_10">
         <div className="full">
           
           <table className="full" border="0" cellSpacing="0" cellPadding="0">

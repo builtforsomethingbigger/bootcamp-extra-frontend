@@ -35,6 +35,12 @@ export default class Nav extends React.Component{
         }
     }
 
+    focusOut = e => {
+        this.setState({
+            mainMenu: false
+        })
+    }
+
     render(){
         return(
             <div id="navigation full">
@@ -50,12 +56,12 @@ export default class Nav extends React.Component{
                                 </td>
                                 <td width="100px">
                                     <div className="browseBtn" onClick={this.browseHandler} >
-                                        Browse
+                                        Topics
                                         <i className="dropdown icon"></i>
                                     </div>
                                 </td>
                                 <td width="100px">
-                                    <div id="menuBtn" onClick={this.menuHandler} onClick={this.mainHandler}>
+                                    <div id="menuBtn" onClick={this.mainHandler}>
                                         ☰
                                     </div>
                                 </td>
@@ -63,8 +69,8 @@ export default class Nav extends React.Component{
                         </tbody>
                     </table>
                 </div>
-                <MainMenu mainMenu={this.state.mainMenu} />
-                <DropdownMenu browseMenu={this.state.browseMenu} />
+                <MainMenu mainMenu={this.state.mainMenu} onBlur={this.focusOut} />
+                <DropdownMenu browseMenu={this.state.browseMenu}  />
             </div>
         );
     }

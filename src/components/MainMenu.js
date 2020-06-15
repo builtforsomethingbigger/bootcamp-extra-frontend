@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default class MainMenu extends React.Component{
+
+
     render(){
         return(
             <div id="mainMenu" className="ui fluid alignRight" style={{display: this.props.mainMenu ? 'block' : 'none' }}>
