@@ -4,7 +4,7 @@ import React from 'react';
 function RecentPosts(props) {
   return (
     <div className="ui list marg_10">
-        <div>RECENT POSTS</div>
+        <div className="font_20 pad_10"><b>RECENT POSTS</b></div>
         {props.posts.sort((a,b) => b.likes - a.likes).map(post => 
             <div className="ui list aligned table">
                 <table border="0" cellPadding="0" cellSpacing="0">
