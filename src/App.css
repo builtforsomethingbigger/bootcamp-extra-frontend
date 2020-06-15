@@ -40,7 +40,8 @@ body{
 .floatCard{
   position: relative;
   float: left;
-  box-shadow: 3px 3px #87878768;
+  box-shadow: 3px 3px 10px 5px #87878768;
+  
 }
 .floatCard:hover{
   box-shadow: 1px 1px #87878768;
