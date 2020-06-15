@@ -8,6 +8,9 @@
   height: 40vmin;
   pointer-events: none;
 }
+.font_16{
+  font-size: 20px;
+}
 #navigation{
   width: 100vw;
   border: 0px;
@@ -16,6 +19,7 @@
 body{
   background-color: #f2f6f8;
 }
+
 #recentPosts{
   position: relative;
   float: left;
@@ -25,12 +29,43 @@ body{
   width: 30vw;
   box-shadow: 3px 3px 10px 5px #87878768;
 }
+#menuBtn{
+  font-size: 22px;
+}
+#menuBtn:hover{
+  cursor: pointer;
+  color: #61dafb;
+}
+.browseBtn{
+  font-size: 15px;
+  cursor: pointer;
+}
+.browseBtn:hover{
+  color: #61dafb;
+}
 #dropdownMenu {
   position: absolute;
-  float: left;
-  width: 70vw;
-  margin-top:60px;
-  left: 0;
+  float: right;
+  width: 85vw;
+  margin-top:62px;
+  margin-right: 130px;
+  right: 0;
+  background-color: white;
+  z-index: 98;
+}
+#mainMenu{
+  position: absolute;
+  float: right;
+  width: 150px;
+  text-align: center;
+  margin-top:-30px;
+  margin-right: 50px;
+  right: 0;
+  border: 1px solid rgb(201, 201, 201);
+  border-radius: 0.2em;
+  box-shadow: 2px 2px 8px 2px #87878768;
+  background-color: white;
+  z-index: 99;
 }
 .searchBar{
   position: relative;

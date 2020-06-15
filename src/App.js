@@ -61,7 +61,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Nav value={this.state.searchInput} onChange={this.searchPosts} />
-        <Switch> {/** with switch, order from most to least specific and will only render ONE */}
+        <Switch>
           <Route path='/posts' render={() => <PostsPage posts={this.state.posts}/>} />
           <Route path="/" render={() => <Home displayRecentPosts={this.displayRecentPosts()} displaySearchedPosts={this.displaySearchedPosts()} />} />
         </Switch>
