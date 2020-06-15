@@ -1,7 +1,8 @@
 import React from 'react';
 import Nav from './Nav';
 import HomePosts from './HomePosts';
-import { Route, Switch } from 'react-router-dom';
+import PostForm from './PostForm';
+// import { Route, Switch } from 'react-router-dom';
 
 const POST_URL = 'http://localhost:3000/api/v1/posts'
 
@@ -36,15 +37,37 @@ export default class Home extends React.Component {
     // || posts.author.toLowerCase().includes(input.toLowerCase()))
   }
 
+  addNewPost = (newPost) => {
+    this.setState({
+      posts: [...this.state.posts, newPost],
+      showForm: !this.state.showForm
+    })
+  }
+
+  handleClick = () => {
+    let newBoolean = !this.state.showForm
+    this.setState({
+      showForm: newBoolean
+    })
+  }
+
+  
+
+
   render() {
     // console.log(this.state)
     return (
       <div>
         <div className="App">
           <Nav value={this.state.searchInput} onChange={this.searchPosts}/>
+          {
+            this.state.showForm ? <PostForm addNewPost={this.addNewPost} /> : null
+          }
+          <div>
+            <button onClick={this.handleClick}> Create a Post </button>
+          </div>
           <div className='post-container'>
             <h1>List of Articles</h1>
-            <button>Create a Post </button>
             <HomePosts posts={this.displaySearchedPosts()}  />
           </div>
         </div>
@@ -52,3 +75,35 @@ export default class Home extends React.Component {
     );
   }
 }
+
+
+
+
+// import PostsPage from './components/PostsPage';
+
+
+// class App extends React.Component {
+ 
+
+  
+//   render() {
+//     // console.log(this.state)
+//     return (
+//       <div>
+//         <div className="App">
+//           <Nav />
+//           {
+//             this.state.showForm ? <PostForm addNewPost={this.addNewPost} handleSubmit={this.handleSubmit} /> : null
+//           }
+//           <div>
+//             <button onClick={this.handleClick}> Create a Post </button>
+//           </div>
+//           <div className='post-container'>
+//             <h1>List of Articles</h1>
+//             <PostsPage posts={this.state.posts} />
+//           </div>
+//         </div>
+//       </div>
+//     );
+//   }
+// }

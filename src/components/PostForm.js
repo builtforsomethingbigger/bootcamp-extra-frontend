@@ -16,7 +16,7 @@ class PostForm extends React.Component {
         })
     }
 
-    onSubmit = (e) => {
+    clickSubmit = (e) => {
         e.preventDefault()
         fetch(POST_URL, {
             method: 'POST',
@@ -43,35 +43,28 @@ class PostForm extends React.Component {
 
     render() {
         console.log(this.state)
-        const { onSubmit, handleInputChange} = this
+        const { clickSubmit, handleInputChange} = this
 
         return (
-            <form onSubmit={onSubmit} class="ui form">
-                <div class="field">
+            <form onSubmit={clickSubmit} className="ui form">
+                <div className="field">
                     <label> Title of Post </label>
                     <input type="text" onChange={handleInputChange} name="title" value={this.state.title} placeholder="Title here..." />
                 </div>
-                <div class="field">
+                <div className="field">
                     <label> Url </label>
                     <input type="text" onChange={handleInputChange} name="url_link" value={this.state.url_link} placeholder="Paste URL..." />
                 </div>
-                <div class="ui form">
-                    <div class="field">
+                <div className="ui form">
+                    <div className="field">
                         <label> Description </label>
                         <textarea onChange={handleInputChange} name='description' value={this.state.description} placeholder="Enter text here..."></textarea>
                     </div>
                 </div>
-                    <button class="ui button" type="submit">Submit</button>
+                    <button className="ui button" type="submit">Submit</button>
             </form>
         )
     }
 }
 
 export default PostForm
-
-// t.string "title"
-// t.string "description"
-// t.integer "likes"
-// t.string "url_link"
-// t.datetime "created_at", precision: 6, null: false
-// t.datetime "updated_at", precision: 6, null: false

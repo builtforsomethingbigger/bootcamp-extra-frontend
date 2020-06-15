@@ -1,7 +1,7 @@
 import React from 'react';
-import DropdownMenu from './DropdownMenu';
+// import DropdownMenu from './DropdownMenu';
 import Search from './Search';
-import { Link, NavLink } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 
 export default class Nav extends React.Component{
@@ -26,7 +26,7 @@ export default class Nav extends React.Component{
         return(
             <div id="navigation">
                 <div className="ui menu grey">
-                    <img src={'../images/bc_extra_logo.png'} />
+                    <img src={'../images/bc_extra_logo.png'} alt='logo'/>
                     <Search value={this.props.value} onChange={this.props.onChange} />
                     <Link id="browseCta" onClick={this.clickHandler} className="browse item">
                         Browse
