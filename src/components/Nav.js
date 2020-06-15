@@ -26,6 +26,7 @@ export default class Nav extends React.Component{
         return(
             <div>
                 <div className="ui menu">
+                    <img src="../../public/favicon-32x32.png" />
                     <Search />
                     <Link id="browseCta" onClick={this.clickHandler} className="browse item">
                         Browse
