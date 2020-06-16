@@ -37,12 +37,18 @@ class PostForm extends React.Component {
                 description: '',
             })
         })
+        this.pushUserToPostsIndex()
 
+    }
+    
+    pushUserToPostsIndex = () => {
+        const history  = this.props.history
+        history.push('/posts')
     }
 
 
     render() {
-        console.log(this.state)
+        console.log(this.props)
         const { clickSubmit, handleInputChange} = this
 
         return (
@@ -61,7 +67,8 @@ class PostForm extends React.Component {
                         <textarea onChange={handleInputChange} name='description' value={this.state.description} placeholder="Enter text here..."></textarea>
                     </div>
                 </div>
-                    <button className="ui button" type="submit">Submit</button>
+                    <button className="ui button" 
+                    type="submit">Submit</button>
             </form>
         )
     }
