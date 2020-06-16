@@ -1,4 +1,6 @@
 import React from 'react'
+import Comment from './Comment'
+
 const POST_URL = 'http://localhost:3000/api/v1/posts'
 
 
@@ -23,7 +25,7 @@ class PostShowPage extends React.Component {
         return (
             <div className="ui labeled button">
                 <div onClick={() => this.incrementLikes(id)} className="ui button">
-                    <i  className="heart icon"></i> Like
+                    <i  className="heart icon blue"></i> Like
                 </div>
                 <button  className="ui basic label">
                     {likes}
@@ -54,17 +56,17 @@ class PostShowPage extends React.Component {
         console.log(this.state.post)
         const { title, description } = this.state.post
         return (
-            <div className="ui one column grid">
-                <div className="row">
-                    <div className="column">
+            <div className="ui text container full">
+                <div className="">
+                    <div className="pad_20">
                         <h1>{title}</h1>
                     </div>
-                </div>
-                <div className="row">
-                    <div className="column">
+                    <div className="">
+                        <h3 className="font_blue">Description</h3>
                         <p>{description}</p>
                         {this.renderButton()}
                     </div>
+                    <div className="padding_top_50 margin_left_25"><Comment posts={this.state.post} /></div>
                 </div>
             </div>
         )

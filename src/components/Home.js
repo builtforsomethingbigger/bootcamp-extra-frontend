@@ -17,13 +17,13 @@ export default class Home extends React.Component {
               <tr>
                 <td valign='top'>
                   <HomePosts posts={this.props.displaySearchedPosts} />
-                  <div className="font_blue font_20">Loading More Posts...</div>
+                  {/* <div className="font_blue font_20">Loading More Posts...</div> */}
                 </td>
                 <td valign='top'>
                   <table border="0" cellSpacing="0" cellPadding="0">
                     <tbody>
                       <tr>
-                        <td id="recentPosts" valign="top">
+                        <td id="recentPosts" className="radius_round" valign="top">
                           <RecentPosts posts={this.props.displayRecentPosts} />
                         </td>
                       </tr>
