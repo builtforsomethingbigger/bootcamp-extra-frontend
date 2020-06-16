@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Home, PostsPage } from './components';
+import { Home, PostsPage, PostForm } from './components';
 import { Route, Switch } from 'react-router-dom';
 import Nav from './components/Nav'
 import PostShowPage from './components/PostShowPage';
@@ -11,7 +11,6 @@ const POST_URL = 'http://localhost:3000/api/v1/posts'
 class App extends React.Component {
   state = {
     posts: [],
-    showForm: false,
     searchInput: ''
   }
 
@@ -43,7 +42,6 @@ class App extends React.Component {
   addNewPost = (newPost) => {
     this.setState({
       posts: [...this.state.posts, newPost],
-      showForm: !this.state.showForm
     })
   }
 
@@ -64,9 +62,10 @@ class App extends React.Component {
       <div className="App">
         <Nav value={this.state.searchInput} onChange={this.searchPosts} />
         <Switch>
-          <Route path='/posts/:id' component={PostShowPage}/> 
-          <Route path='/posts' render={() => <PostsPage  displayRecentPosts={this.displayRecentPosts()} 
-          displaySearchedPosts={this.displaySearchedPosts()}/>} />
+          <Route path='/form' render={() => <PostForm addNewPost={this.addNewPost}/>} />
+          <Route path='/posts/:id' component={PostShowPage} />
+          <Route path='/posts' render={() => <PostsPage displayRecentPosts={this.displayRecentPosts()}
+            displaySearchedPosts={this.displaySearchedPosts()} />} />
 
           <Route path="/" render={() => <Home displayRecentPosts={this.displayRecentPosts()} displaySearchedPosts={this.displaySearchedPosts()} />} />
         </Switch>

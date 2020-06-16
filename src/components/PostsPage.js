@@ -4,6 +4,7 @@ import RecentPosts from './RecentPosts';
 
 
 
+
 class PostsPage extends React.Component {
 
   
@@ -11,6 +12,9 @@ class PostsPage extends React.Component {
     console.log(this.props)
     return (
       <div className="PostsPage margin_left_20 " >
+        <div className='formDiv'> 
+
+        </div>
         <table className="full" border="0" cellSpacing="0" cellPadding="0">
             <tbody>  
               <tr>
