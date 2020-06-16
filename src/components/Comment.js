@@ -2,6 +2,7 @@ import React from 'react';
 // import { Route, Switch } from 'react-router-dom';
 
 function Comment(props) {
+  console.log(props)
   return (
     <div className="ui text container">
       <div className="ui comments">

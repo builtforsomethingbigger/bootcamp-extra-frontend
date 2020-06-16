@@ -6,5 +6,5 @@ export { default as Search } from './Search';
 export { default as PostsPage } from './PostsPage';
 export { default as PostForm } from './PostForm';
 // export { default as User } from './User';
-// export { default as UsersPage } from './UsersPage';
+export { default as UsersPage } from './UsersPage';
 // export { default as Comment } from './Comment';
