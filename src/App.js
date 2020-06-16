@@ -4,6 +4,7 @@ import { Home, PostsPage, PostForm, UsersPage } from './components';
 import { Route, Switch } from 'react-router-dom';
 import Nav from './components/Nav'
 import PostShowPage from './components/PostShowPage';
+import UserForm from './components/UserForm';
 
 
 const POST_URL = 'http://localhost:3000/api/v1/posts'
@@ -70,7 +71,8 @@ class App extends React.Component {
       <div className="App">
         <Nav value={this.state.searchInput} onChange={this.searchPosts} />
         <Switch>
-          <Route path='/form' render={(routerProps) => <PostForm addNewPost={this.addNewPost} {...routerProps}/>} />
+          <Route path='/signup' component={UserForm}/>
+          <Route path='/new_post' render={(routerProps) => <PostForm addNewPost={this.addNewPost} {...routerProps} />} />
           <Route path='/posts/:id' component={PostShowPage} />
           <Route path='/posts' render={() => <PostsPage displayRecentPosts={this.displayRecentPosts()}
             displaySearchedPosts={this.displaySearchedPosts()} />} />
