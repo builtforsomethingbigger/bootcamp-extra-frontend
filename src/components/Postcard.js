@@ -4,42 +4,32 @@ import { useHistory } from 'react-router-dom';
 
 
 function Postcard(props) {
-  // console.log(props)
   let history = useHistory()
 
-  const { id, title, description } = props
-  // console.log(props)
+  const { id, title, description, likes } = props
+  console.log(props)
   return (
-    // <div className="ui items">
-    //   <div className="item">
-    //     <div className="image">
-    //       <img src={url_link} alt='#'/>
-    //     </div>
-    //     <div className="content">
-    //       <a className="header">{title}</a>
-    //       <div className="meta">
-    //         <span>{description}</span>
-    //       </div>
-    //       <div className="description">
-    //         <p></p>
-    //       </div>
-    //       <div className="extra">
-    //         likes: {likes}
-    //       </div>
-    //     </div>
-    //   </div>
-
-    // </div>
-
-    <div className="ui marg_10">
-      <div className="ui left aligned table pad_20">
-        <div className="content">
-          <h1 className="header" onClick={() => history.push(`/posts/${id}`)} >{title}</h1>
-          <div className="description"><b>Description:</b> {description}</div>
-          <button onClick={() => history.push(`/posts/${id}`)} > Visit Post </button>
-        </div>
+    <div className="PostsPage pad_10">
+      <div className="ui marg_10 container floatCard">
+          <div className="ui left aligned table pad_20">
+              <div className="content" onClick={() => history.push(`/posts/${id}`)}>
+                  <table>
+                      <tbody>
+                          <tr>
+                              <td><h1 className="header"  >{title}</h1></td>
+                          </tr>
+                          <tr>
+                              <td className="description"><b>Description:</b> {description}</td>
+                          </tr>
+                          <tr>
+                              <td className="extra"><b>likes:</b> {likes}</td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
       </div>
-    </div>
+</div>
 
   );
 }

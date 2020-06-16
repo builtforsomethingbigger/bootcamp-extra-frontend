@@ -65,7 +65,9 @@ class App extends React.Component {
         <Nav value={this.state.searchInput} onChange={this.searchPosts} />
         <Switch>
           <Route path='/posts/:id' component={PostShowPage}/> 
-          <Route path='/posts' render={(routerProps) => <PostsPage posts={this.state.posts} {...routerProps} />} />
+          <Route path='/posts' render={() => <PostsPage  displayRecentPosts={this.displayRecentPosts()} 
+          displaySearchedPosts={this.displaySearchedPosts()}/>} />
+
           <Route path="/" render={() => <Home displayRecentPosts={this.displayRecentPosts()} displaySearchedPosts={this.displaySearchedPosts()} />} />
         </Switch>
       </div>

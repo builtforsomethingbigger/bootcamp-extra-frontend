@@ -1,3 +1,12 @@
+.margin_left_20 {
+  margin-left: 20px;
+}
+
+.radius_round {
+  border-radius: .4em;
+} 
+
+
 .App {
   text-align: center;
   width: 100vw;
