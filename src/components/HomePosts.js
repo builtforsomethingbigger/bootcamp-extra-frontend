@@ -1,9 +1,8 @@
 import React from 'react';
 
 function HomePosts(props) {
-    return (
+    return (  
         <div className="PostsPage pad_10">
-
             {props.posts.sort((a, b) => b.likes - a.likes).map(post =>
                 <div key={post.id} className="ui marg_10 container floatCard">
                     <div className="ui left aligned table pad_20">
@@ -23,6 +22,7 @@ function HomePosts(props) {
                             </table>
                         </div>
                     </div>
+                    
                 </div>
 
             )}
