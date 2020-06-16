@@ -1,3 +1,13 @@
+#youTube {
+  position: absolute;
+  top: 180px;
+  left: 20%;
+  width: 60vw;
+  height: 50vh;
+  border: 3px solid #4c83d5;
+  box-shadow: 3px 3px 10px 5px #87878768;
+  z-index: 95;
+}
 .margin_left_20 {
   margin-left: 20px;
 }
@@ -55,6 +65,7 @@ ul{
   width: 100vw;
   border: 0px;
   margin: 0px;
+  box-shadow: 3px 3px 10px 5px #87878768;
 }
 body{
   background-color: #f2f6f8;

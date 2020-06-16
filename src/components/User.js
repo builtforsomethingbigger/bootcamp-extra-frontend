@@ -3,7 +3,7 @@ import React from 'react';
 
 function User(props) {
   return (
-    <div className="ui raised very padded text container segment blue">
+    <div className="ui raised very padded text container segment">
         <div className="ui item">
             <div>
                 <h1 className="ui dividing header">{props.username}</h1>
