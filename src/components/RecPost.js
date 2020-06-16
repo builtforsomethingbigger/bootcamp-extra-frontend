@@ -1,9 +1,10 @@
 import React from 'react';
-
+import { useHistory } from 'react-router-dom';
 
 function RecPost(props) {
+    let history = useHistory()
     return(
-        <div className="ui list table blue">
+        <div className="ui list table blue" onClick={() => history.push(`/posts/${props.id}`)}>
                 <table border="0" cellPadding="0" cellSpacing="0">
                     <tbody>
                         <tr>

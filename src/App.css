@@ -1,12 +1,21 @@
 .margin_left_20 {
   margin-left: 20px;
 }
+.margin_left_25 {
+  margin-left: 25px;
+}
+.padding_top_50 {
+  padding-top: 50px;
+}
 
 .radius_round {
   border-radius: .6em;
 } 
 
-
+.blue:hover{
+  cursor: pointer;
+  color: #4c83d5;
+}
 .App {
   text-align: center;
   width: 100vw;
@@ -57,7 +66,11 @@ body{
   right: 10px;
   top: 20px;
   width: 30vw;
+  border: 1px solid rgba(128, 128, 128, 0.241);
   box-shadow: 3px 3px 10px 5px #87878768;
+}
+#recentPosts:hover{
+  box-shadow: none;
 }
 #menuBtn{
   font-size: 30px;
