@@ -43,7 +43,7 @@ export default class Nav extends React.Component{
 
     render(){
         return(
-            <div id="navigation full">
+            <div id="navigation">
                 <div className="ui menu">
                     <table className="full pad_10" border="0" cellPadding="0" cellSpacing="0">
                         <tbody>

@@ -1,16 +1,18 @@
 import React from 'react';
 import './App.css';
-import { Home, PostsPage, PostForm } from './components';
+import { Home, PostsPage, PostForm, UsersPage } from './components';
 import { Route, Switch } from 'react-router-dom';
 import Nav from './components/Nav'
 import PostShowPage from './components/PostShowPage';
 
 
 const POST_URL = 'http://localhost:3000/api/v1/posts'
+const USER_URL = 'http://localhost:3000/api/v1/users'
 
 class App extends React.Component {
   state = {
     posts: [],
+    authors: [],
     searchInput: ''
   }
 
@@ -20,6 +22,12 @@ class App extends React.Component {
       .then(posts => {
         this.setState({
           posts
+        })
+      })
+      fetch(USER_URL).then(res => res.json())
+      .then(authors => {
+        this.setState({
+          authors
         })
       })
   }
@@ -66,7 +74,7 @@ class App extends React.Component {
           <Route path='/posts/:id' component={PostShowPage} />
           <Route path='/posts' render={() => <PostsPage displayRecentPosts={this.displayRecentPosts()}
             displaySearchedPosts={this.displaySearchedPosts()} />} />
-
+          <Route path='/users' render={() => <UsersPage authors={this.state.authors}/>} />
           <Route path="/" render={() => <Home displayRecentPosts={this.displayRecentPosts()} displaySearchedPosts={this.displaySearchedPosts()} />} />
         </Switch>
       </div>

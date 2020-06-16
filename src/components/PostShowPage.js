@@ -1,12 +1,15 @@
 import React from 'react'
 import Comment from './Comment'
+import YouTube from './YouTube';
 
 const POST_URL = 'http://localhost:3000/api/v1/posts'
 
 
 class PostShowPage extends React.Component {
     state = {
-        post: {}
+        post: {},
+        video: false,
+        display: false
     }
 
     postId = this.props.match.params.id
@@ -52,11 +55,25 @@ class PostShowPage extends React.Component {
         })
     }
 
+    showYouTube = e => {
+        const displayState = this.state.display
+        if (displayState === true){
+          this.setState({
+            display: false
+          })
+        }else{
+          this.setState({
+            display: true
+          })
+        }
+      }
+
     render() {
         console.log(this.state.post)
-        const { title, description } = this.state.post
+        const { title, description, url_link } = this.state.post
         return (
             <div className="ui text container full">
+                <YouTube display={this.state.display}/>
                 <div className="">
                     <div className="pad_20">
                         <h1>{title}</h1>
@@ -64,6 +81,9 @@ class PostShowPage extends React.Component {
                     <div className="">
                         <h3 className="font_blue">Description</h3>
                         <p>{description}</p>
+                        <h3 className="font_blue">Resource Link</h3>
+                        <a href={url_link} target="_blank" onClick={this.showYouTube}>{url_link}</a><br/>
+                        <br/>
                         {this.renderButton()}
                     </div>
                     <div className="padding_top_50 margin_left_25"><Comment posts={this.state.post} /></div>
