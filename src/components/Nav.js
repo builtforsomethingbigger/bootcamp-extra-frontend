@@ -49,14 +49,14 @@ export default class Nav extends React.Component{
                         <tbody>
                             <tr>
                                 <td align="left" width="70px">
-                                    <Link to='/'><img src={'../images/bc_extra_logo.png'} alt="Bootcamp Extra" /></Link>
+                                    <Link to='/' className="headLogo stroke">BootcampExtra</Link>
                                 </td>
                                 <td className="searchBar">
                                     <Search value={this.props.value} onChange={this.props.onChange} />
                                 </td>
                                 <td width="100px">
                                     <div className="browseBtn" onClick={this.browseHandler} >
-                                        Topics
+                                        <b className=" font_20">Topics</b>
                                         <i className="dropdown icon"></i>
                                     </div>
                                 </td>
