@@ -3,6 +3,8 @@ import './App.css';
 import { Home, PostsPage } from './components';
 import { Route, Switch } from 'react-router-dom';
 import Nav from './components/Nav'
+import PostShowPage from './components/PostShowPage';
+
 
 const POST_URL = 'http://localhost:3000/api/v1/posts'
 
@@ -62,7 +64,8 @@ class App extends React.Component {
       <div className="App">
         <Nav value={this.state.searchInput} onChange={this.searchPosts} />
         <Switch>
-          <Route path='/posts' render={() => <PostsPage posts={this.state.posts}/>} />
+          <Route path='/posts/:id' component={PostShowPage}/> 
+          <Route path='/posts' render={(routerProps) => <PostsPage posts={this.state.posts} {...routerProps} />} />
           <Route path="/" render={() => <Home displayRecentPosts={this.displayRecentPosts()} displaySearchedPosts={this.displaySearchedPosts()} />} />
         </Switch>
       </div>

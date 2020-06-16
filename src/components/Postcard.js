@@ -1,9 +1,13 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
+
 
 
 function Postcard(props) {
   // console.log(props)
-  const { title, description, likes, url_link } = props
+  let history = useHistory()
+
+  const { id, title, description } = props
   // console.log(props)
   return (
     // <div className="ui items">
@@ -30,10 +34,9 @@ function Postcard(props) {
     <div className="ui marg_10">
       <div className="ui left aligned table pad_20">
         <div className="content">
-          <h1 className="header">{title}</h1>
+          <h1 className="header" onClick={() => history.push(`/posts/${id}`)} >{title}</h1>
           <div className="description"><b>Description:</b> {description}</div>
-          <div><b>Resource Link:</b> <a className="header"> {url_link}</a></div>
-          <div className="extra"><b>likes:</b> {likes}</div>
+          <button onClick={() => history.push(`/posts/${id}`)} > Visit Post </button>
         </div>
       </div>
     </div>
