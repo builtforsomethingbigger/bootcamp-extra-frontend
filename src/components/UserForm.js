@@ -1,11 +1,11 @@
 
 import React from 'react'
-const POST_URL = 'http://localhost:3000/api/v1/posts'
+const USER_URL = 'http://localhost:3000/api/v1/users'
 
 
 class UserForm extends React.Component {
     state = {
-        fullName: '',
+        name: '',
         bio: '',
         password: '',
         username: '',
@@ -20,7 +20,7 @@ class UserForm extends React.Component {
 
     clickSubmit = (e) => {
         e.preventDefault()
-        fetch(POST_URL, {
+        fetch(USER_URL, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -31,20 +31,20 @@ class UserForm extends React.Component {
             )
         })
         .then(res => res.json())
-        .then(newPost => {
+        .then(newUser => {
             this.setState({
                 title: '',
                 url_link: '',
                 description: '',
             })
         })
-        this.pushUserToPostsIndex()
+        this.pushUserToUsersIndex()
 
     }
     
-    pushUserToPostsIndex = () => {
+    pushUserToUsersIndex = () => {
         const history  = this.props.history
-        history.push('/posts')
+        history.push('/users')
     }
 
 
@@ -55,7 +55,7 @@ class UserForm extends React.Component {
             <form onSubmit={clickSubmit} className="ui form">
             <div className="field">
                 <label> Full Name </label>
-                <input type="text" onChange={handleInputChange} name="fullName" value={this.state.fullName} placeholder="First & Last Name" />
+                <input type="text" onChange={handleInputChange} name="name" value={this.state.name} placeholder="First & Last Name" />
             </div>
             <div className="field">
                 <label> Username </label>
