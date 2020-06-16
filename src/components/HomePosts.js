@@ -4,7 +4,7 @@ function HomePosts(props) {
     return (  
         <div className="PostsPage pad_10">
             {props.posts.sort((a, b) => b.likes - a.likes).map(post =>
-                <div key={post.id} className="ui marg_10 container floatCard">
+                <div key={post.id} className="ui marg_10 container floatCard radius_round">
                     <div className="ui left aligned table pad_20">
                         <div className="content">
                             <table>

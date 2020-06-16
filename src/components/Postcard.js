@@ -10,7 +10,7 @@ function Postcard(props) {
   console.log(props)
   return (
     <div className="PostsPage pad_10">
-      <div className="ui marg_10 container floatCard">
+      <div className="ui marg_10 container floatCard radius_round">
           <div className="ui left aligned table pad_20">
               <div className="content" onClick={() => history.push(`/posts/${id}`)}>
                   <table>
