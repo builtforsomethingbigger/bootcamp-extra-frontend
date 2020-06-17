@@ -78,12 +78,15 @@ class App extends React.Component {
       <div className="App">
         <Nav value={this.state.searchInput} onChange={this.searchPosts} />
         <Switch>
-          <Route path='/signup' render={(routerProps) => <UserForm addNewUser={this.addNewUser} {...routerProps} />} />
           <Route path='/new_post' render={(routerProps) => <PostForm addNewPost={this.addNewPost} {...routerProps} />} />
           <Route path='/posts/:id' render={(routerProps) => <PostShowPage authors={this.state.authors} {...routerProps}/>} />
           <Route path='/posts' render={() => <PostsPage displayRecentPosts={this.displayRecentPosts()}
-            displaySearchedPosts={this.displaySearchedPosts()} authors={this.state.authors} />} />
-          <Route path='/users' render={() => <UsersPage authors={this.state.authors}/>} />
+            displaySearchedPosts={this.displaySearchedPosts()} />} />
+
+          <Route path='/signup' render={(routerProps) => <UserForm addNewUser={this.addNewUser} {...routerProps} />} />
+          <Route path='/users/:id' component={PostShowPage} />
+          <Route path='/users' render={() => <UsersPage authors={this.state.authors} />} />
+
           <Route path="/" render={() => <Home displayRecentPosts={this.displayRecentPosts()} displaySearchedPosts={this.displaySearchedPosts()} />} />
         </Switch>
       </div>
