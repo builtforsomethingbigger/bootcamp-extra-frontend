@@ -83,7 +83,7 @@ class App extends React.Component {
           <Route path='/posts/:id' render={(routerProps) => <PostShowPage authors={this.state.authors} {...routerProps}/>} />
           <Route path='/posts' render={() => <PostsPage displayRecentPosts={this.displayRecentPosts()}
             displaySearchedPosts={this.displaySearchedPosts()} authors={this.state.authors} />} />
-          <Route path='/users' render={() => <UsersPage authors={this.state.authors}/>} />
+          <Route path='/users' render={() => <UsersPage authors={this.state.authors} posts={this.state.posts}/>} />
           <Route path="/" render={() => <Home displayRecentPosts={this.displayRecentPosts()} displaySearchedPosts={this.displaySearchedPosts()} />} />
         </Switch>
       </div>

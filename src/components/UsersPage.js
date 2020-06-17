@@ -2,7 +2,6 @@ import React from 'react';
 import User from './User';
 
 class UsersPage extends React.Component {
-
   
   render(){
     console.log(this.props)
@@ -12,7 +11,7 @@ class UsersPage extends React.Component {
             <tbody>  
               <tr>
                 <td valign='top'>
-                {this.props.authors.map(author => <User key={author.id} {...author}  />  )}
+                {this.props.authors.map(author => <User key={author.id} {...author} posts={this.props.posts} />  )}
                   {/* <div className="font_blue font_20">Loading More Users...</div> */}
                 </td>
               </tr>
