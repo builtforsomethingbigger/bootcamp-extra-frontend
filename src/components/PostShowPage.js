@@ -13,7 +13,8 @@ class PostShowPage extends React.Component {
         authors: [],
         comments: [],
         video: false,
-        display: false
+        display: false,
+        queryString: ''
     }
 
     postId = this.props.match.params.id
@@ -70,14 +71,16 @@ class PostShowPage extends React.Component {
 
     showYouTube = e => {
         const displayState = this.state.display
-        if (displayState === true) {
-            this.setState({
-                display: false
-            })
-        } else {
-            this.setState({
-                display: true
-            })
+        if (this.state.post.video === true && displayState === false){
+            e.preventDefault()
+          this.setState({
+            display: true
+          })
+          const ytLink = this.state.post.url_link
+          const stringArray = ytLink.split('=')
+          this.setState({
+              queryString: stringArray[1]
+          })
         }
     }
 
@@ -113,13 +116,17 @@ class PostShowPage extends React.Component {
         })
     }
 
+    // iframeConvert = () => {
+    // }
+
     render() {
+        console.log(this.state.queryString)
         const { title, description, url_link } = this.state.post
         const { id } = this.props.currentUser
         console.log(this.state.post.id, this.props.currentUser.id)
         return (
             <div className="ui text container full">
-                <YouTube display={this.state.display} />
+                <YouTube display={this.state.display} link={this.state.queryString}/>
                 <div className="">
                     <div className="pad_20">
                         <h1 className="font_blue">{title}</h1>
