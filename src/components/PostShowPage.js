@@ -19,17 +19,20 @@ class PostShowPage extends React.Component {
     postId = this.props.match.params.id
 
     componentDidMount() {
+        this.fetchComments()
         fetch(`${POST_URL}/${this.postId}`)
             .then(res => res.json())
             .then(post => this.setState({ post }))
-        fetch(COMMENT_URL)
-            .then(res => res.json())
-            .then(comments => this.setState({ comments }))
         fetch(USER_URL)
             .then(res => res.json())
             .then(authors => this.setState({ authors }))
     }
 
+    fetchComments = () => {
+        fetch(COMMENT_URL)
+            .then(res => res.json())
+            .then(comments => this.setState({ comments }))
+    }
 
 
     renderButton = () => {
@@ -94,7 +97,7 @@ class PostShowPage extends React.Component {
                         <br/>
                         {this.renderButton()}
                     </div>
-                    <div className="padding_top_50 margin_left_25"><Comment posts={this.state.post} comments={this.state.comments} authors={this.state.authors} /></div>
+                    <div className="padding_top_50 margin_left_25"><Comment post={this.state.post} comments={this.state.comments} authors={this.props.authors} fetchComments={this.fetchComments} /></div>
                 </div>
             </div>
         )

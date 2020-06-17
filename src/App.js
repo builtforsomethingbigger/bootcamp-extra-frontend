@@ -12,6 +12,7 @@ const USER_URL = 'http://localhost:3000/api/v1/users'
 
 class App extends React.Component {
   state = {
+    currentUser: {},
     posts: [],
     authors: [],
     searchInput: ''
@@ -25,7 +26,7 @@ class App extends React.Component {
           posts
         })
       })
-      fetch(USER_URL).then(res => res.json())
+    fetch(USER_URL).then(res => res.json())
       .then(authors => {
         this.setState({
           authors
@@ -79,7 +80,7 @@ class App extends React.Component {
         <Switch>
           <Route path='/signup' render={(routerProps) => <UserForm addNewUser={this.addNewUser} {...routerProps} />} />
           <Route path='/new_post' render={(routerProps) => <PostForm addNewPost={this.addNewPost} {...routerProps} />} />
-          <Route path='/posts/:id' component={PostShowPage} />
+          <Route path='/posts/:id' render={(routerProps) => <PostShowPage authors={this.state.authors} {...routerProps}/>} />
           <Route path='/posts' render={() => <PostsPage displayRecentPosts={this.displayRecentPosts()}
             displaySearchedPosts={this.displaySearchedPosts()} authors={this.state.authors} />} />
           <Route path='/users' render={() => <UsersPage authors={this.state.authors}/>} />
