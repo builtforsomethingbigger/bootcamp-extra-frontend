@@ -54,6 +54,12 @@ class App extends React.Component {
     })
   }
 
+  addNewUser = (newUser) => {
+    this.setState({
+      authors: [...this.state.authors, newUser],
+    })
+  }
+
   handleClick = () => {
     let newBoolean = !this.state.showForm
     this.setState({
@@ -71,7 +77,7 @@ class App extends React.Component {
       <div className="App">
         <Nav value={this.state.searchInput} onChange={this.searchPosts} />
         <Switch>
-          <Route path='/signup' component={UserForm}/>
+          <Route path='/signup' render={(routerProps) => <UserForm addNewUser={this.addNewUser} {...routerProps} />} />
           <Route path='/new_post' render={(routerProps) => <PostForm addNewPost={this.addNewPost} {...routerProps} />} />
           <Route path='/posts/:id' component={PostShowPage} />
           <Route path='/posts' render={() => <PostsPage displayRecentPosts={this.displayRecentPosts()}

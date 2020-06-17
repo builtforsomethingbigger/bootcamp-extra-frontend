@@ -25,49 +25,52 @@ class UserForm extends React.Component {
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json'
-            }, 
+            },
             body: JSON.stringify(
                 this.state
             )
         })
-        .then(res => res.json())
-        .then(newUser => {
-            this.setState({
-                title: '',
-                url_link: '',
-                description: '',
+            .then(res => res.json())
+            .then(newUser => {
+                this.props.addNewUser(newUser)
+                this.setState({
+                    name: '',
+                    bio: '',
+                    password: '',
+                    username: ''
+                })
             })
-        })
         this.pushUserToUsersIndex()
 
     }
-    
+
     pushUserToUsersIndex = () => {
-        const history  = this.props.history
+        const history = this.props.history
         history.push('/users')
     }
 
 
     render() {
-        const { clickSubmit, handleInputChange} = this
+        const { clickSubmit, handleInputChange } = this
+        console.log(this.props)
 
-        return(
+        return (
             <form onSubmit={clickSubmit} className="ui form">
-            <div className="field">
-                <label> Full Name </label>
-                <input type="text" onChange={handleInputChange} name="name" value={this.state.name} placeholder="First & Last Name" />
-            </div>
-            <div className="field">
-                <label> Username </label>
-                <input type="text" onChange={handleInputChange} name="username" value={this.state.username} placeholder="Title here..." />
-            </div>
-            <div className="field">
-                <label> Password </label>
-                <input type="text" onChange={handleInputChange} name="password" value={this.state.password} placeholder="Title here..." />
-            </div>
-                <button className="ui button" 
-                type="submit">Submit</button>
-        </form>
+                <div className="field">
+                    <label> Full Name </label>
+                    <input type="text" onChange={handleInputChange} name="name" value={this.state.name} placeholder="First & Last Name" />
+                </div>
+                <div className="field">
+                    <label> Username </label>
+                    <input type="text" onChange={handleInputChange} name="username" value={this.state.username} placeholder="Title here..." />
+                </div>
+                <div className="field">
+                    <label> Password </label>
+                    <input type="text" onChange={handleInputChange} name="password" value={this.state.password} placeholder="Title here..." />
+                </div>
+                <button className="ui button"
+                    type="submit">Submit</button>
+            </form>
         )
     }
 }
