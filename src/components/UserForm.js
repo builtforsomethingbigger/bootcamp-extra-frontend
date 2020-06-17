@@ -70,14 +70,14 @@ class UserForm extends React.Component {
                     <input type="text" onChange={handleInputChange} name="password" value={this.state.password} placeholder="Title here..." />
                 </div>
                 <div className=" pad_10">
-                <select className="ui dropdown" onChange={handleInputChange} name='mod'>
-                    <option hidden value={0}> Module</option>
-                    <option value={1}>Mod 1</option>
-                    <option value={2}>Mod 2</option>
-                    <option value={3}>Mod 3</option>
-                    <option value={4}>Mod 4</option>
-                    <option value={5}>Mod 5</option>
-                </select>
+                    <select className="ui dropdown" onChange={handleInputChange} name='mod'>
+                        <option hidden value={0}> Module</option>
+                        <option value={1}>Mod 1</option>
+                        <option value={2}>Mod 2</option>
+                        <option value={3}>Mod 3</option>
+                        <option value={4}>Mod 4</option>
+                        <option value={5}>Mod 5</option>
+                    </select>
                 <br />
 
                 <button className="ui button" type="submit">Submit</button>

@@ -49,6 +49,11 @@ class App extends React.Component {
     // || posts.author.toLowerCase().includes(input.toLowerCase()))
   }
 
+  // displaySearchedAuthors = e => {
+  //   const allPosts = [...this.state.posts]
+  //   const input = this.state.searchInput
+  //   return allPosts.filter(posts => posts.title.toLowerCase().includes(input.toLowerCase())
+  // }
   addNewPost = (newPost) => {
     this.setState({
       posts: [...this.state.posts, newPost],
