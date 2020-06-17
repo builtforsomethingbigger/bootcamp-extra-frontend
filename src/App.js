@@ -12,7 +12,16 @@ const USER_URL = 'http://localhost:3000/api/v1/users'
 
 class App extends React.Component {
   state = {
-    currentUser: {},
+    currentUser: {
+      bio: "",
+      created_at: "2020-06-17T20:07:00.142Z",
+      id: 29,
+      mod: 3,
+      name: "Edgar Rivera",
+      password: "123",
+      updated_at: "2020-06-17T20:07:00.142Z",
+      username: "TestUser"
+    },
     posts: [],
     authors: [],
     searchInput: ''
@@ -80,13 +89,13 @@ class App extends React.Component {
         <Nav value={this.state.searchInput} onChange={this.searchPosts} currentUser={this.state.currentUser} />
         <Switch>
           <Route path='/new_post' render={(routerProps) => <PostForm addNewPost={this.addNewPost} {...routerProps} />} />
-          <Route path='/posts/:id' render={(routerProps) => <PostShowPage authors={this.state.authors} {...routerProps}/>} />
+          <Route path='/posts/:id' render={(routerProps) => <PostShowPage currentUser={this.state.currentUser} authors={this.state.authors} {...routerProps} />} />
           <Route path='/posts' render={() => <PostsPage displayRecentPosts={this.displayRecentPosts()}
-            displaySearchedPosts={this.displaySearchedPosts()} authors={this.state.authors}/>} />
+            displaySearchedPosts={this.displaySearchedPosts()} authors={this.state.authors} />} />
 
           <Route path='/signup' render={(routerProps) => <UserForm addNewUser={this.addNewUser} {...routerProps} />} />
           <Route path='/users/:id' component={PostShowPage} />
-          <Route path='/users' render={() => <UsersPage authors={this.state.authors} posts={this.state.posts}/>} />
+          <Route path='/users' render={() => <UsersPage authors={this.state.authors} posts={this.state.posts} />} />
           <Route path="/" render={() => <Home displayRecentPosts={this.displayRecentPosts()} displaySearchedPosts={this.displaySearchedPosts()} authors={this.state.authors} />} />
         </Switch>
       </div>

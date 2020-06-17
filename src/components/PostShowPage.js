@@ -36,55 +36,90 @@ class PostShowPage extends React.Component {
 
 
     renderButton = () => {
-        const {id, likes} = this.state.post
+        const { id, likes } = this.state.post
 
         return (
             <div className="ui labeled button">
                 <div onClick={() => this.incrementLikes(id)} className="ui button">
-                    <i  className="heart icon blue"></i> Like
+                    <i className="heart icon blue"></i> Like
                 </div>
-                <button  className="ui basic label">
+                <button className="ui basic label">
                     {likes}
                 </button>
             </div>
         )
     }
 
+    onChange
     incrementLikes = (id) => {
         fetch(`${POST_URL}/${id}`, {
             method: 'PATCH',
-            headers:{
+            headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({likes: this.state.post.likes + 1})
+            body: JSON.stringify({ likes: this.state.post.likes + 1 })
         })
-        .then(res => res.json())
-        .then(newPost => {
-            this.setState({
-                post: newPost
+            .then(res => res.json())
+            .then(newPost => {
+                this.setState({
+                    post: newPost
+                })
             })
-        })
     }
 
     showYouTube = e => {
         const displayState = this.state.display
-        if (displayState === true){
-          this.setState({
-            display: false
-          })
-        }else{
-          this.setState({
-            display: true
-          })
+        if (displayState === true) {
+            this.setState({
+                display: false
+            })
+        } else {
+            this.setState({
+                display: true
+            })
         }
-      }
+    }
+
+    onSubmit = e => {
+        e.preventDefault()
+        fetch(COMMENT_URL, {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                post_id: this.state.post.id,
+                user_id: this.props.currentUser.id,
+                text: this.state.text
+            })
+        })
+            .then(res => res.json())
+            .then(console.log)
+        // .then(newUser => {
+        //     this.props.addNewUser(newUser)
+        //     this.setState({
+        //       text: ''
+        //     })
+        // })
+        // this.props.fetchComments()
+    }
+
+    changeInText = e => {
+        this.setState({
+            [e.target.name]: e.target.value
+
+        })
+    }
 
     render() {
         const { title, description, url_link } = this.state.post
+        const { id } = this.props.currentUser
+        console.log(this.state.post.id, this.props.currentUser.id)
         return (
             <div className="ui text container full">
-                <YouTube display={this.state.display}/>
+                <YouTube display={this.state.display} />
                 <div className="">
                     <div className="pad_20">
                         <h1 className="font_blue">{title}</h1>
@@ -93,11 +128,20 @@ class PostShowPage extends React.Component {
                         <h3 className="ui dividing header">Description</h3>
                         <p>{description}</p>
                         <h3 className="ui dividing header">Resource Link</h3>
-                        <a href={url_link} target="_blank" onClick={this.showYouTube}>{url_link}</a><br/>
-                        <br/>
+                        <a href={url_link} target="_blank" onClick={this.showYouTube}>{url_link}</a><br />
+                        <br />
                         {this.renderButton()}
                     </div>
                     <div className="padding_top_50 margin_left_25"><Comment post={this.state.post} comments={this.state.comments} authors={this.props.authors} fetchComments={this.fetchComments} /></div>
+
+                    <form onSubmit={this.onSubmit} className="ui reply form">
+                        <div className="field">
+                            <textarea name="text" value={this.state.text} onChange={this.changeInText}></textarea>
+                        </div>
+                        <button className="ui labeled submit icon button" type="submit">
+                            <i className="icon edit blue" type="submit"></i> Add Reply
+                        </button>
+                    </form>
                 </div>
             </div>
         )
@@ -105,3 +149,5 @@ class PostShowPage extends React.Component {
 }
 
 export default PostShowPage
+
+

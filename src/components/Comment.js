@@ -4,7 +4,9 @@ const COMMENT_URL = 'http://localhost:3000/api/v1/comments'
 export default class Comment extends React.Component {
 
   state = {
-    commentArea: ''
+    user_id: '',
+    post_id: '',
+    text: ''
   }
 
   findAuthor = (authors, userId) => {
@@ -20,39 +22,14 @@ export default class Comment extends React.Component {
     const parsedDate = date.split("T");
     return parsedDate[0];
   };
-  onSubmit = e => {
-    e.preventDefault()
-    fetch(COMMENT_URL, {
-      method: 'POST',
-      headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        text: this.state.commentArea
-      })
-    })
-      .then(res => res.json())
-      .then(data => console.log(data))
-      // .then(newUser => {
-      //     this.props.addNewUser(newUser)
-      //     this.setState({
-      //       commentArea: ''
-      //     })
-      // })
-    this.props.fetchComments()
-  }
 
-  onChange = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    })
-  }
+
 
 
   render() {
     const postComments = this.props.comments.filter(
       (comment) => comment.post_id === this.props.post.id)
+      // console.log(this.props)
   
     return (
       <div className="ui text container commentContainer">
@@ -74,14 +51,6 @@ export default class Comment extends React.Component {
             </div>
           </div>)
         )}
-        <form onSubmit={this.onSubmit} className="ui reply form">
-          <div className="field">
-            <textarea name="commentArea" value={this.state.commentArea} onChange={this.onChange}></textarea>
-          </div>
-          <button className="ui labeled submit icon button" type="submit">
-            <i className="icon edit blue" type="submit"></i> Add Reply
-          </button>
-        </form>
       </div>
     );
   }
