@@ -177,7 +177,16 @@ ul{
   box-shadow: 3px 3px 10px 5px #87878768;
   z-index: 95;
 }
-
+.youTubeClose{
+  position: relative;
+  top:40px;
+  font-size: 22px;
+  color: white;
+  padding: 10px;
+  border: 2px solid white;
+  background-color: #4c83d5;
+  cursor: pointer;
+}
 
 /*COMMENT STYLES*/
 .commentContainer{

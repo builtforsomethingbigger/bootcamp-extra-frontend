@@ -81,6 +81,10 @@ class PostShowPage extends React.Component {
           this.setState({
               queryString: stringArray[1]
           })
+        }else{
+            this.setState({
+                display: false
+              })
         }
     }
 
@@ -126,7 +130,7 @@ class PostShowPage extends React.Component {
         console.log(this.state.post.id, this.props.currentUser.id)
         return (
             <div className="ui text container full">
-                <YouTube display={this.state.display} link={this.state.queryString}/>
+                <YouTube display={this.state.display} link={this.state.queryString} onClick={this.showYouTube}/>
                 <div className="">
                     <div className="pad_20">
                         <h1 className="font_blue">{title}</h1>
