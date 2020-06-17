@@ -1,50 +1,32 @@
-#youTube {
-  position: absolute;
-  top: 180px;
-  left: 20%;
-  width: 60vw;
-  height: 50vh;
-  border: 3px solid #4c83d5;
-  box-shadow: 3px 3px 10px 5px #87878768;
-  z-index: 95;
-}
-.margin_left_20 {
-  margin-left: 20px;
-}
-.margin_left_25 {
-  margin-left: 25px;
-}
-.padding_top_50 {
-  padding-top: 50px;
-}
-
-.radius_round {
-  border-radius: .6em;
-} 
-
+/*SEMANTIC UI STYLE MANIPULATIONS*/
 .blue:hover{
   transform: scale(.99);
   cursor: pointer;
   color: #4c83d5;
+}
+
+
+
+
+/*APP STYLES*/
+body{
+  background-color: #f2f6f8;
+}
+.full{
+  width: 100vw;
 }
 .App {
   text-align: center;
   width: 100vw;
   height: 100vh;
 }
-.bg_white{
-  background-color: white;
+.floatCard{
+  position: relative;
+  float: left;
+  box-shadow: 3px 3px 10px 5px #87878768;
 }
-.headLogo{
-  margin: 10px;
-  font-family: monospace;
-  font-size: 30px;
-  font-weight: bold;
-  color: #4c83d5;
-}
-.stroke{
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: rgba(255, 255, 255, 0.358);
+.floatCard:hover{
+  box-shadow: none;
 }
 .App-logo {
   height: 40vmin;
@@ -58,18 +40,55 @@
 }
 .font_blue{
   color: #4c83d5;
+}  
+.stroke{
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.358);
+}
+.bg_white{
+  background-color: white;
 }
 ul{
   list-style-type: none;
 }
+.alignRight{
+  float: right;
+  right: 0;
+}
+.marg_10{
+  margin: 10px;
+}
+.margin_left_20 {
+  margin-left: 20px;
+}
+.margin_left_25 {
+  margin-left: 25px;
+}
+.padding_top_50 {
+  padding-top: 50px;
+}
+.pad_10{
+  padding: 10px;
+}
+.pad_20{
+  padding: 20px;
+}
+.radius_round {
+  border-radius: .6em;
+} 
+.headLogo{
+  margin: 10px;
+  font-family: monospace;
+  font-size: 30px;
+  font-weight: bold;
+  color: #4c83d5;
+}
+/*HOMEPAGE STYLES*/
 #navigation{
   width: 100vw;
   border: 0px;
   margin: 0px;
   box-shadow: 3px 3px 10px 5px #87878768;
-}
-body{
-  background-color: #f2f6f8;
 }
 #recentPosts{
   position: relative;
@@ -94,6 +113,20 @@ body{
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #4c83d5;
 }
+#mainMenu{
+  position: absolute;
+  float: right;
+  width: 150px;
+  text-align: center;
+  margin-top:-30px;
+  margin-right: 40px;
+  right: 0;
+  border: 1px solid rgb(201, 201, 201);
+  border-radius: 0.2em;
+  box-shadow: 2px 2px 8px 2px #87878768;
+  background-color: white;
+  z-index: 99;
+}
 .browseBtn{
   font-size: 15px;
   cursor: pointer;
@@ -113,20 +146,6 @@ body{
   background-color: white;
   z-index: 98;
 }
-#mainMenu{
-  position: absolute;
-  float: right;
-  width: 150px;
-  text-align: center;
-  margin-top:-30px;
-  margin-right: 40px;
-  right: 0;
-  border: 1px solid rgb(201, 201, 201);
-  border-radius: 0.2em;
-  box-shadow: 2px 2px 8px 2px #87878768;
-  background-color: white;
-  z-index: 99;
-}
 .searchBar{
   position: relative;
   float: left;
@@ -134,40 +153,44 @@ body{
 .prompt{
   width: 60vw;
 }
-.marg_10{
-  margin: 10px;
-}
-.pad_10{
-  padding: 10px;
-}
-.pad_20{
-  padding: 20px;
-}
+
+/*USER STYLES*/
+
+
+/*POST STYLES*/
 .PostsPage{
   width: 65vw;
 }
-.floatCard{
-  position: relative;
-  float: left;
+#youTube {
+  position: absolute;
+  top: 180px;
+  left: 20%;
+  width: 60vw;
+  height: 50vh;
+  border: 3px solid #4c83d5;
   box-shadow: 3px 3px 10px 5px #87878768;
-  
+  z-index: 95;
 }
-.floatCard:hover{
-  box-shadow: none;
+
+
+/*COMMENT STYLES*/
+.commentContainer{
+  position: relative;
+  right: 25px;
 }
-.alignRight{
-  float: right;
-  right: 0;
-}
-.full{
-  width: 100vw;
-}
+
+
+
+
+
+
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -182,6 +205,7 @@ body{
 .App-link {
   color: #61dafb;
 }
+
 
 @keyframes App-logo-spin {
   from {

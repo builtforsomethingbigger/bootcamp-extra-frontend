@@ -19,7 +19,7 @@ class PostsPage extends React.Component {
             <tbody>  
               <tr>
                 <td valign='top'>
-                {this.props.displaySearchedPosts.map(post => <Postcard key={post.id} {...post}  authors={this.prop.authors} />  )}
+                {this.props.displaySearchedPosts.map(post => <Postcard key={post.id} {...post}/>  )}
                   {/* <div className="font_blue font_20">Loading More Posts...</div> */}
                 </td>
                 <td valign='top'>

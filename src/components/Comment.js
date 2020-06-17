@@ -12,7 +12,7 @@ function Comment(props) {
 
   console.log(props.authors)
   return (
-    <div className="ui text container">
+    <div className="ui text container commentContainer">
       <h3 className="ui dividing header">Comments</h3>
       {postComments.map(comment => 
       <div className="ui comments">
