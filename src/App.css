@@ -48,6 +48,9 @@ body{
 .bg_white{
   background-color: white;
 }
+.bg_form{
+  background-color:#f2f6f8;
+}
 ul{
   list-style-type: none;
 }
@@ -57,6 +60,9 @@ ul{
 }
 .marg_10{
   margin: 10px;
+}
+.margin_top_10{
+  margin-top:10px;
 }
 .margin_left_20 {
   margin-left: 20px;
@@ -95,7 +101,7 @@ ul{
   float: left;
   margin: 0 auto;
   right: 10px;
-  top: 20px;
+  top: 10px;
   width: 30vw;
   border: 1px solid rgba(128, 128, 128, 0.241);
   box-shadow: 3px 3px 10px 5px #87878768;
@@ -151,7 +157,7 @@ ul{
   float: left;
 }
 .prompt{
-  width: 60vw;
+  width: 40vw;
 }
 
 /*USER STYLES*/
@@ -184,12 +190,20 @@ ul{
 
 
 
-
+@media only screen and (max-width: 1200px){
+  .none{
+    display:none;
+  }
+  .prompt{
+    width: 50vw;
+  }
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+  
 }
 .App-header {
   background-color: #282c34;
@@ -205,7 +219,6 @@ ul{
 .App-link {
   color: #61dafb;
 }
-
 
 @keyframes App-logo-spin {
   from {

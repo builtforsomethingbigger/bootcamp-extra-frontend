@@ -56,11 +56,14 @@ export default class Nav extends React.Component{
                                 <td className="searchBar">
                                     <Search value={this.props.value} onChange={this.props.onChange} />
                                 </td>
-                                <td width="100px">
+                                <td width="800px" align="left" width="100px">
                                     <div className="browseBtn" onClick={this.browseHandler} >
-                                        <b className=" font_20">Topics</b>
+                                        <b className="font_20">Topics</b>
                                         <i className="dropdown icon"></i>
                                     </div>
+                                </td>
+                                <td className="font_20 none" align="right" width="500px">
+                                    Welcome, {this.props.currentUser.username}
                                 </td>
                                 <td width="100px">
                                     <div id="menuBtn" onClick={this.mainHandler} >

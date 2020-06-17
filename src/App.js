@@ -75,21 +75,19 @@ class App extends React.Component {
   }
 
   render() {
-    // console.log(this.state)
     return (
       <div className="App">
-        <Nav value={this.state.searchInput} onChange={this.searchPosts} />
+        <Nav value={this.state.searchInput} onChange={this.searchPosts} currentUser={this.state.currentUser} />
         <Switch>
           <Route path='/new_post' render={(routerProps) => <PostForm addNewPost={this.addNewPost} {...routerProps} />} />
           <Route path='/posts/:id' render={(routerProps) => <PostShowPage authors={this.state.authors} {...routerProps}/>} />
           <Route path='/posts' render={() => <PostsPage displayRecentPosts={this.displayRecentPosts()}
-            displaySearchedPosts={this.displaySearchedPosts()} />} />
+            displaySearchedPosts={this.displaySearchedPosts()} authors={this.state.authors}/>} />
 
           <Route path='/signup' render={(routerProps) => <UserForm addNewUser={this.addNewUser} {...routerProps} />} />
           <Route path='/users/:id' component={PostShowPage} />
-          <Route path='/users' render={() => <UsersPage authors={this.state.authors} />} />
-
-          <Route path="/" render={() => <Home displayRecentPosts={this.displayRecentPosts()} displaySearchedPosts={this.displaySearchedPosts()} />} />
+          <Route path='/users' render={() => <UsersPage authors={this.state.authors} posts={this.state.posts}/>} />
+          <Route path="/" render={() => <Home displayRecentPosts={this.displayRecentPosts()} displaySearchedPosts={this.displaySearchedPosts()} authors={this.state.authors} />} />
         </Switch>
       </div>
     )

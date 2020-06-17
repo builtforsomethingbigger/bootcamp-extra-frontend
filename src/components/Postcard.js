@@ -5,9 +5,15 @@ import { useHistory } from 'react-router-dom';
 
 function Postcard(props) {
   let history = useHistory()
-
+  const findAuthor = (authors, postId) => {
+    const commentAuthor = authors.find((author) => author.id === postId);
+    if (commentAuthor) {
+        return commentAuthor.username;
+    } else {
+        return "Author";
+    } 
+  };
   const { id, title, description, likes } = props
-  console.log(props)
   return (
     <div className="PostsPage pad_10">
       <div className="ui marg_10 container floatCard radius_round">
@@ -16,13 +22,14 @@ function Postcard(props) {
                   <table>
                       <tbody>
                           <tr>
-                              <td><h1 className="header"  >{title}</h1></td>
+                              <td colSpan="2"><h1 className="header"  >{title}</h1></td>
                           </tr>
                           <tr>
-                              <td className="description"><b>Description:</b> {description}</td>
+                              <td colSpan="2" className="description"><b>Description:</b> {description}</td>
                           </tr>
                           <tr>
-                              <td className="extra"><b>likes:</b> {likes}</td>
+                              <td className="extra"><b>Author:</b> {findAuthor(props.authors, props.user_id)}</td>
+                              <td className="extra"><b>Likes:</b> {likes}</td>
                           </tr>
                       </tbody>
                   </table>

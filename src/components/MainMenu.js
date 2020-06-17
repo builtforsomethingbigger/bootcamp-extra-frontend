@@ -17,7 +17,7 @@ export default class MainMenu extends React.Component{
                                                 <Link to="/" className="item font_20 font_blue">Home</Link>
                                                 <Link to="/posts" className="item font_20 font_blue">Posts</Link>
                                                 <Link to="/users" className="item font_20 font_blue">Authors</Link>
-                                                <Link to="/users/:id" className="item font_20 font_blue">My Profile</Link>
+                                                <Link to="/login" className="item font_20 font_blue">Log In</Link>
                                             </div>
                                         </div>
                                     </td>
