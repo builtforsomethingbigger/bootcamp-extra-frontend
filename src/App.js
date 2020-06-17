@@ -25,7 +25,7 @@ class App extends React.Component {
           posts
         })
       })
-      fetch(USER_URL).then(res => res.json())
+    fetch(USER_URL).then(res => res.json())
       .then(authors => {
         this.setState({
           authors
@@ -77,12 +77,15 @@ class App extends React.Component {
       <div className="App">
         <Nav value={this.state.searchInput} onChange={this.searchPosts} />
         <Switch>
-          <Route path='/signup' render={(routerProps) => <UserForm addNewUser={this.addNewUser} {...routerProps} />} />
           <Route path='/new_post' render={(routerProps) => <PostForm addNewPost={this.addNewPost} {...routerProps} />} />
           <Route path='/posts/:id' component={PostShowPage} />
           <Route path='/posts' render={() => <PostsPage displayRecentPosts={this.displayRecentPosts()}
             displaySearchedPosts={this.displaySearchedPosts()} />} />
-          <Route path='/users' render={() => <UsersPage authors={this.state.authors}/>} />
+
+          <Route path='/signup' render={(routerProps) => <UserForm addNewUser={this.addNewUser} {...routerProps} />} />
+          <Route path='/users/:id' component={PostShowPage} />
+          <Route path='/users' render={() => <UsersPage authors={this.state.authors} />} />
+
           <Route path="/" render={() => <Home displayRecentPosts={this.displayRecentPosts()} displaySearchedPosts={this.displaySearchedPosts()} />} />
         </Switch>
       </div>
