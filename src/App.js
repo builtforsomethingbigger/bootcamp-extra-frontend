@@ -58,6 +58,7 @@ class App extends React.Component {
   addNewUser = (newUser) => {
     this.setState({
       authors: [...this.state.authors, newUser],
+      currentUser: newUser
     })
   }
 
@@ -74,6 +75,7 @@ class App extends React.Component {
   }
 
   render() {
+    // console.log(this.state)
     return (
       <div className="App">
         <Nav value={this.state.searchInput} onChange={this.searchPosts} />

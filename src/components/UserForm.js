@@ -9,7 +9,8 @@ class UserForm extends React.Component {
         bio: '',
         password: '',
         username: '',
-        mod: 0
+        mod: ''
+
     }
 
     handleInputChange = (e) => {
@@ -52,7 +53,7 @@ class UserForm extends React.Component {
 
     render() {
         const { clickSubmit, handleInputChange } = this
-        console.log(this.props)
+        console.log(this.state)
 
         return (
             <form onSubmit={clickSubmit} className="ui form">
@@ -68,19 +69,21 @@ class UserForm extends React.Component {
                     <label> Password </label>
                     <input type="text" onChange={handleInputChange} name="password" value={this.state.password} placeholder="Title here..." />
                 </div>
-                <button className="ui button"
-                    type="submit">Submit</button>
-            </form>
+
+                <select class="ui dropdown" onChange={handleInputChange} name='mod'>
+                    <option hidden value={0}> Module</option>
+                    <option value={1}>Mod 1</option>
+                    <option value={2}>Mod 2</option>
+                    <option value={3}>Mod 3</option>
+                    <option value={4}>Mod 4</option>
+                    <option value={5}>Mod 5</option>
+                </select>
+                <br />
+
+                <button className="ui button" type="submit">Submit</button>
+            </form >
         )
     }
 }
 
 export default UserForm
-
-// t.string "name"
-// t.string "bio"
-// t.string "password"
-// t.string "username"
-// t.integer "mod"
-// t.datetime "created_at", precision: 6, null: false
-// t.datetime "updated_at"
