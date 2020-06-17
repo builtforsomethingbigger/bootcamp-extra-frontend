@@ -40,6 +40,9 @@ body{
 }
 .font_blue{
   color: #4c83d5;
+}
+.font_blue:hover{
+  font-weight: bold;
 }  
 .stroke{
     -webkit-text-stroke-width: 1px;
@@ -122,7 +125,8 @@ ul{
 #mainMenu{
   position: absolute;
   float: right;
-  width: 150px;
+  width: 220px;
+  height: 170px;
   text-align: center;
   margin-top:-30px;
   margin-right: 40px;
@@ -161,7 +165,23 @@ ul{
 }
 
 /*USER STYLES*/
-
+#userFormContainer{
+  position: relative;
+  margin: 0 auto;
+  top: 10%;
+  width: 500px;
+  height: 80vh;
+}
+.userFormSubmit{
+  position: relative;
+  font-size: 22px;
+  color: white;
+  padding: 10px;
+  border: 2px solid white;
+  background-color: #4c83d5;
+  cursor: pointer;
+  z-index: 50;
+}
 
 /*POST STYLES*/
 .PostsPage{
@@ -186,6 +206,7 @@ ul{
   border: 2px solid white;
   background-color: #4c83d5;
   cursor: pointer;
+  z-index: 50;
 }
 
 /*COMMENT STYLES*/

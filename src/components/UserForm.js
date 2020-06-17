@@ -56,17 +56,17 @@ class UserForm extends React.Component {
         console.log(this.state)
 
         return (
-            <form onSubmit={clickSubmit} className="ui form card">
+            <form onSubmit={clickSubmit} id="userFormContainer" className="ui form container">
                 <div className="field pad_10">
-                    <label> Full Name </label>
+                    <h2> Full Name </h2>
                     <input type="text" onChange={handleInputChange} name="name" value={this.state.name} placeholder="First & Last Name" />
                 </div>
                 <div className="field pad_10">
-                    <label> Username </label>
+                    <h2> Username </h2>
                     <input type="text" onChange={handleInputChange} name="username" value={this.state.username} placeholder="Title here..." />
                 </div>
                 <div className="field pad_10">
-                    <label> Password </label>
+                    <h2> Password </h2>
                     <input type="text" onChange={handleInputChange} name="password" value={this.state.password} placeholder="Title here..." />
                 </div>
                 <div className=" pad_10">
@@ -80,7 +80,7 @@ class UserForm extends React.Component {
                     </select>
                 <br />
 
-                <button className="ui button" type="submit">Submit</button>
+                <button className="userFormSubmit" type="submit">Submit</button>
                 </div>
             </form >
         )

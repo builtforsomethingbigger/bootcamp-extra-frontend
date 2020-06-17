@@ -14,10 +14,10 @@ export default class MainMenu extends React.Component{
                                     <td className="pad_10">
                                         <div className="column">
                                             <div className="ui list">
-                                                <Link to="/" className="item font_20 font_blue">Home</Link>
-                                                <Link to="/posts" className="item font_20 font_blue">Posts</Link>
-                                                <Link to="/users" className="item font_20 font_blue">Authors</Link>
-                                                <Link to="/signup" className="item font_20 font_blue">Log In</Link>
+                                                <Link to="/" className="item font_24 font_blue">Home 🏠</Link>
+                                                <Link to="/posts" className="item font_24 font_blue">All Posts</Link>
+                                                <Link to="/users" className="item font_24 font_blue">All Authors</Link>
+                                                <Link to="/signup" className="item font_24 font_blue">Sign Up / Log In</Link>
                                             </div>
                                         </div>
                                     </td>
