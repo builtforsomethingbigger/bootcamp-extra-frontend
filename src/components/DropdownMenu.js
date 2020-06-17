@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default class DropdownMenu extends React.Component{
     render(){
         return(
-            <div id="dropdownMenu" className="ui fluid popup alignRight" style={{display: this.props.browseMenu ? 'block' : 'none' }}>
+            <div id="dropdownMenu" className="ui fluid popup alignRight" onMouseLeave={this.props.mouseOut} style={{display: this.props.browseMenu ? 'block' : 'none' }}>
                     <div>
                         <table width="100%">
                             <tbody>

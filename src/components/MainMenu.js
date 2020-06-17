@@ -6,7 +6,7 @@ export default class MainMenu extends React.Component{
 
     render(){
         return(
-            <div id="mainMenu" className="ui fluid alignRight" style={{display: this.props.mainMenu ? 'block' : 'none' }}>
+            <div id="mainMenu" className="ui fluid alignRight" onMouseLeave={this.props.mouseOut} style={{display: this.props.mainMenu ? 'block' : 'none' }}>
                     <div>
                         <table width="100%">
                             <tbody>

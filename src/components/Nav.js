@@ -7,6 +7,8 @@ import { Link} from 'react-router-dom';
 
 export default class Nav extends React.Component{
 
+    
+
     state={
         mainMenu: false,
         browseMenu: false
@@ -61,7 +63,7 @@ export default class Nav extends React.Component{
                                     </div>
                                 </td>
                                 <td width="100px">
-                                    <div id="menuBtn" onClick={this.mainHandler}>
+                                    <div id="menuBtn" onClick={this.mainHandler} >
                                         ☰
                                     </div>
                                 </td>
@@ -69,8 +71,8 @@ export default class Nav extends React.Component{
                         </tbody>
                     </table>
                 </div>
-                <MainMenu mainMenu={this.state.mainMenu} onBlur={this.focusOut} />
-                <DropdownMenu browseMenu={this.state.browseMenu}  />
+                <MainMenu mainMenu={this.state.mainMenu}  mouseOut={this.mainHandler} />
+                <DropdownMenu browseMenu={this.state.browseMenu} mouseOut={this.browseHandler} />
             </div>
         );
     }

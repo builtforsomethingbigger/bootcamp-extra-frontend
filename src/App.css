@@ -23,6 +23,7 @@
 } 
 
 .blue:hover{
+  transform: scale(.99);
   cursor: pointer;
   color: #4c83d5;
 }
@@ -152,7 +153,7 @@ body{
   
 }
 .floatCard:hover{
-  box-shadow: 1px 1px #87878768;
+  box-shadow: none;
 }
 .alignRight{
   float: right;

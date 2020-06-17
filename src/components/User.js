@@ -6,7 +6,7 @@ function User(props) {
     <div className="ui raised very padded text container segment">
         <div className="ui item">
             <div>
-                <h1 className="ui dividing header">{props.username}</h1>
+                <h1 className="ui dividing header blue">{props.username}</h1>
             </div>
             <div className="ui container">
               <table width="100%" cellSpacing="0" cellPadding="0" border="0">
