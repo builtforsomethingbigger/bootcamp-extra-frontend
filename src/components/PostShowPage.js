@@ -3,11 +3,15 @@ import Comment from './Comment'
 import YouTube from './YouTube';
 
 const POST_URL = 'http://localhost:3000/api/v1/posts'
+const USER_URL = 'http://localhost:3000/api/v1/users'
+const COMMENT_URL = 'http://localhost:3000/api/v1/comments'
 
 
 class PostShowPage extends React.Component {
     state = {
         post: {},
+        authors: [],
+        comments: [],
         video: false,
         display: false
     }
@@ -18,6 +22,12 @@ class PostShowPage extends React.Component {
         fetch(`${POST_URL}/${this.postId}`)
             .then(res => res.json())
             .then(post => this.setState({ post }))
+        fetch(COMMENT_URL)
+            .then(res => res.json())
+            .then(comments => this.setState({ comments }))
+        fetch(USER_URL)
+            .then(res => res.json())
+            .then(authors => this.setState({ authors }))
     }
 
 
@@ -69,24 +79,24 @@ class PostShowPage extends React.Component {
       }
 
     render() {
-        console.log(this.state.post)
+        console.log(this.state)
         const { title, description, url_link } = this.state.post
         return (
             <div className="ui text container full">
                 <YouTube display={this.state.display}/>
                 <div className="">
                     <div className="pad_20">
-                        <h1>{title}</h1>
+                        <h1 className="font_blue">{title}</h1>
                     </div>
                     <div className="">
-                        <h3 className="font_blue">Description</h3>
+                        <h3 className="ui dividing header">Description</h3>
                         <p>{description}</p>
-                        <h3 className="font_blue">Resource Link</h3>
+                        <h3 className="ui dividing header">Resource Link</h3>
                         <a href={url_link} target="_blank" onClick={this.showYouTube}>{url_link}</a><br/>
                         <br/>
                         {this.renderButton()}
                     </div>
-                    <div className="padding_top_50 margin_left_25"><Comment posts={this.state.post} /></div>
+                    <div className="padding_top_50 margin_left_25"><Comment posts={this.state.post} comments={this.state.comments} authors={this.state.authors} /></div>
                 </div>
             </div>
         )

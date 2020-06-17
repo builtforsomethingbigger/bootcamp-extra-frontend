@@ -73,7 +73,7 @@ class App extends React.Component {
           <Route path='/form' render={(routerProps) => <PostForm addNewPost={this.addNewPost} {...routerProps}/>} />
           <Route path='/posts/:id' component={PostShowPage} />
           <Route path='/posts' render={() => <PostsPage displayRecentPosts={this.displayRecentPosts()}
-            displaySearchedPosts={this.displaySearchedPosts()} />} />
+            displaySearchedPosts={this.displaySearchedPosts()} authors={this.state.authors} />} />
           <Route path='/users' render={() => <UsersPage authors={this.state.authors}/>} />
           <Route path="/" render={() => <Home displayRecentPosts={this.displayRecentPosts()} displaySearchedPosts={this.displaySearchedPosts()} />} />
         </Switch>
