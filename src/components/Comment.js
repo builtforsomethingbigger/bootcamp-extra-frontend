@@ -1,5 +1,4 @@
 import React from 'react';
-import { format } from "date-fns";
 
 function Comment(props) {
 
@@ -10,12 +9,11 @@ function Comment(props) {
     return parsedDate[0]
   }
 
-  console.log(props.authors)
   return (
     <div className="ui text container commentContainer">
       <h3 className="ui dividing header">Comments</h3>
       {postComments.map(comment => 
-      <div className="ui comments">
+      <div key={comment.id} className="ui comments">
         <div className="comment">
           <div className="content">
             <a className="author">{props.authors.username}</a>
@@ -30,12 +28,12 @@ function Comment(props) {
         
       </div>
       )}
-      <form class="ui reply form">
-          <div class="field">
+      <form className="ui reply form">
+          <div className="field">
             <textarea></textarea>
           </div>
-          <div class="ui labeled submit icon button">
-            <i class="icon edit blue"></i> Add Reply
+          <div className="ui labeled submit icon button">
+            <i className="icon edit blue"></i> Add Reply
           </div>
         </form>
     </div>

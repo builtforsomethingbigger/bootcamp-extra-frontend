@@ -57,7 +57,6 @@ class PostShowPage extends React.Component {
             body: JSON.stringify({likes: this.state.post.likes + 1})
         })
         .then(res => res.json())
-        // .then(console.log)
         .then(newPost => {
             this.setState({
                 post: newPost
@@ -79,7 +78,6 @@ class PostShowPage extends React.Component {
       }
 
     render() {
-        console.log(this.state)
         const { title, description, url_link } = this.state.post
         return (
             <div className="ui text container full">

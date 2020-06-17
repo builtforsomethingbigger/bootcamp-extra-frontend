@@ -9,7 +9,6 @@ class PostsPage extends React.Component {
 
   
   render(){
-    console.log(this.props)
     return (
       <div className="PostsPage margin_left_20 " >
         <div className='formDiv'> 
