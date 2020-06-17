@@ -6,7 +6,6 @@ export default class Comment extends React.Component {
   state = {
     user_id: '',
     post_id: '',
-    text: ''
   }
 
   findAuthor = (authors, userId) => {
@@ -22,8 +21,6 @@ export default class Comment extends React.Component {
     const parsedDate = date.split("T");
     return parsedDate[0];
   };
-
-
 
 
   render() {
