@@ -101,7 +101,7 @@ class App extends React.Component {
           <Route path='/signup' render={(routerProps) => <UserForm addNewUser={this.addNewUser} {...routerProps} />} />
           <Route path='/users/:id' component={PostShowPage} />
           <Route path='/users' render={() => <UsersPage authors={this.state.authors} posts={this.state.posts} />} />
-          <Route path="/" render={() => <Home displayRecentPosts={this.displayRecentPosts()} displaySearchedPosts={this.displaySearchedPosts()} authors={this.state.authors} />} />
+          <Route path="/" render={(routerProps) => <Home {...routerProps} displayRecentPosts={this.displayRecentPosts()} displaySearchedPosts={this.displaySearchedPosts()} authors={this.state.authors} />} />
         </Switch>
       </div>
     )
