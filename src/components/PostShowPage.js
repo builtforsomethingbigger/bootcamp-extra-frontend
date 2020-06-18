@@ -14,7 +14,8 @@ class PostShowPage extends React.Component {
         comments: [],
         video: false,
         display: false,
-        queryString: ''
+        queryString: '',
+        text: ''
     }
 
     postId = this.props.match.params.id
@@ -51,7 +52,7 @@ class PostShowPage extends React.Component {
         )
     }
 
-    onChange
+
     incrementLikes = (id) => {
         fetch(`${POST_URL}/${id}`, {
             method: 'PATCH',
@@ -88,6 +89,12 @@ class PostShowPage extends React.Component {
         }
     }
 
+    addNewComment = (newComment) => {
+        this.setState({
+            comments: [...this.state.comments, newComment],
+        })
+    }
+
     onSubmit = e => {
         e.preventDefault()
         fetch(COMMENT_URL, {
@@ -103,14 +110,13 @@ class PostShowPage extends React.Component {
             })
         })
             .then(res => res.json())
-            .then(console.log)
-        // .then(newUser => {
-        //     this.props.addNewUser(newUser)
-        //     this.setState({
-        //       text: ''
-        //     })
-        // })
-        // this.props.fetchComments()
+            // .then(console.log)
+            .then(newComment => {
+                this.addNewComment(newComment)
+                this.setState({
+                    text: ''
+                })
+            })
     }
 
     changeInText = e => {
