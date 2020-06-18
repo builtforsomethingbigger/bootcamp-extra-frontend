@@ -149,15 +149,17 @@ class PostShowPage extends React.Component {
                         <br />
                         {this.renderButton()}
                     </div>
-                    <div className="padding_top_50 margin_left_25"><Comment post={this.state.post} comments={this.state.comments} authors={this.props.authors} fetchComments={this.fetchComments} /></div>
+                    <div className="padding_top_50 margin_left_25 pad_bottom_50"><Comment post={this.state.post} comments={this.state.comments} authors={this.props.authors} fetchComments={this.fetchComments} /></div>
 
                     <form onSubmit={this.onSubmit} className="ui reply form">
                         <div className="field">
                             <textarea name="text" value={this.state.text} onChange={this.changeInText}></textarea>
                         </div>
-                        <button className="ui labeled submit icon button" type="submit">
-                            <i className="icon edit blue" type="submit"></i> Add Reply
-                        </button>
+                        <div className=" pad_bottom_100">
+                            <button className="ui labeled submit icon button" type="submit">
+                                <i className="icon edit blue" type="submit"></i> Add Reply
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>

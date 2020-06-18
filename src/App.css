@@ -45,8 +45,8 @@ body{
   font-weight: bold;
 }  
 .stroke{
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: rgba(255, 255, 255, 0.358);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(255, 255, 255, 0.358);
 }
 .bg_white{
   background-color: white;
@@ -76,6 +76,12 @@ ul{
 .padding_top_50 {
   padding-top: 50px;
 }
+.pad_bottom_100{
+  padding-bottom: 100px;
+}
+.pad_bottom_50{
+  padding-bottom: 50px;
+}
 .pad_10{
   padding: 10px;
 }
@@ -92,6 +98,9 @@ ul{
   font-weight: bold;
   color: #4c83d5;
 }
+
+
+
 /*HOMEPAGE STYLES*/
 #navigation{
   width: 100vw;
@@ -164,6 +173,8 @@ ul{
   width: 40vw;
 }
 
+
+
 /*USER STYLES*/
 #userFormContainer{
   position: relative;
@@ -182,6 +193,8 @@ ul{
   cursor: pointer;
   z-index: 50;
 }
+
+
 
 /*POST STYLES*/
 .PostsPage{
@@ -208,6 +221,8 @@ ul{
   cursor: pointer;
   z-index: 50;
 }
+
+
 
 /*COMMENT STYLES*/
 .commentContainer{
